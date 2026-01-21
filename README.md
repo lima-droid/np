@@ -50,6 +50,7 @@ np.sh 脚本说明（主程序安装）：
 ├── nodepass            
 ├── np-dev              
 ├── np-stb
+
 ├── np-lts
 ├── qrencode
 ├── nodepass.gob        
