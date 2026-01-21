@@ -1,6 +1,10 @@
+========================================
+          NodePass 部署文档
+========================================
+
 一键部署：
 
- $ bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
+$ bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
 
 版本信息：
 稳定版：v1.15.0
@@ -47,20 +51,21 @@ np -h      显示帮助信息
 
 目录结构：
 /etc/nodepass/
-├── data                
-├── nodepass            
-├── np-dev              
-├── np-stb              
-├── np-lts              
-├── qrencode            
-├── nodepass.gob        
-└── np.sh               
+├── data                # Configuration data
+├── nodepass            # Main program symlink pointing to the currently used kernel file
+├── np-dev              # Development version kernel file
+├── np-stb              # Stable version kernel file
+├── np-lts              # LTS version kernel file
+├── qrencode            # QR code utility
+├── nodepass.gob        # Data storage file
+└── np.sh               # Installer and management script
 
 提供信息说明：
-域名或 IP：输入域名启用 HTTPS 反向代理与 SSL 证书
-            输入 IP 则跳过反向代理和 Caddy 安装
-端口        ：默认 3000，可自定义
-自动检查端口冲突
+- 域名或 IP：输入域名启用 HTTPS 反向代理与 SSL 证书；输入 IP 跳过反向代理和 Caddy 安装
+- 端口：默认 3000，可自定义
+- 自动检查端口冲突
 
 卸载：
 $ np -u
+
+========================================
