@@ -1,7 +1,3 @@
-┌───────────────────────────────────────────────┐
-│             NodePass 部署与运行脚本           │
-└───────────────────────────────────────────────┘
-
 一键部署：
 $ bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
 
@@ -53,7 +49,9 @@ np.sh 脚本说明（主程序安装）：
 ├── data                
 ├── nodepass            
 ├── np-dev              
-├── np-stb              
+├── np-stb
+├── np-lts
+├── qrencode
 ├── nodepass.gob        
 └── np.sh               
 提供信息说明：
