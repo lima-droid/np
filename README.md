@@ -47,17 +47,6 @@ np -k      修改 API Key
 np -s      查看 API 信息
 np -h      显示帮助信息
 
-目录结构：
-/etc/nodepass/
-├── data                # Configuration data
-├── nodepass            # Main program symlink pointing to the currently used kernel file
-├── np-dev              # Development version kernel file
-├── np-stb              # Stable version kernel file
-├── np-lts              # LTS version kernel file
-├── qrencode            # QR code utility
-├── nodepass.gob        # Data storage file
-└── np.sh               # Installer and management script
-
 提供信息说明：
 - 域名或 IP：输入域名启用 HTTPS 反向代理与 SSL 证书；输入 IP 跳过反向代理和 Caddy 安装
 - 端口：默认 3000，可自定义
