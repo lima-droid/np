@@ -269,7 +269,7 @@ download_backup_offline_package() {
   mkdir -p /root/np
   cd /root
   wget -qO npsh.zip https://github.com/lima-droid/sh/archive/refs/heads/main.zip
-  unzip -j -q npsh.zip "npsh-main/np/*" -d /root/np
+  unzip -j -q npsh.zip "np-main/np/*" -d /root/np
   rm -rf npsh.zip
   
   if [ $? -eq 0 ]; then
