@@ -1,6 +1,6 @@
-==============================
+
       NodePass 部署文档
-==============================
+
 
 一键部署：
 $ bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
