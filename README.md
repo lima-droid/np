@@ -1,11 +1,14 @@
-一键部署：
+========================================
+            NodePass 小手册
+========================================
 
-    bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
+一键部署命令：
+$ bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
 
 版本信息：
-稳定版：v1.15.0
-开发版本：v1.15.1-b1
-经典版：v1.10.3
+- 稳定版：v1.15.0
+- 开发版本：v1.15.1-b1
+- 经典版：v1.10.3
 
 项目简介：
 NodePass 是一款通用的 TCP/UDP 隧道解决方案
@@ -14,9 +17,9 @@ NodePass 是一款通用的 TCP/UDP 隧道解决方案
 可在网络限制下实现高性能、安全访问
 
 系统要求：
-操作系统：兼容 Debian / Ubuntu / OpenWRT
-架构    ：x86_64 (amd64)
-权限    ：需要 root 权限运行
+- 操作系统：兼容 Debian / Ubuntu / OpenWRT
+- 架构    ：x86_64 (amd64)
+- 权限    ：需要 root 权限运行
 
 np.sh 脚本说明（主程序安装）：
 请按照提示提供以下信息：
@@ -61,7 +64,7 @@ np -h      显示帮助信息
 - 端口：默认 3000，可自定义
 - 自动检查端口冲突
 
-卸载：
+卸载命令：
 $ np -u
 
 ========================================
