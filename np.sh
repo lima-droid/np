@@ -3,7 +3,7 @@
 SCRIPT_VERSION='0.0.8'
 # 环境变量用于在Debian或Ubuntu操作系统中设置非交互式（noninteractive）安装模式
 export DEBIAN_FRONTEND=noninteractive
-# 本地离线包目录
+# 本地GitHub包目录
 OFFLINE_DIR='/root/np'
 # 工作目录和临时目录
 TEMP_DIR='/tmp/nodepass'
@@ -14,7 +14,7 @@ mkdir -p $TEMP_DIR
 E[0]="\n Language:\n 1. 简体中文 (Default)\n 2. English"
 C[0]="${E[0]}"
 E[1]="1. Supports three versions: stable, development, and classic; 2. Supports switching between the three versions (np -t); 3. Offline installation mode"
-C[1]="1. 支持稳定版、开发版和经典版三个版本; 2. 支持三个版本间切换 (np -t); 3. 离线安装模式"
+C[1]="1. 支持稳定版、开发版和经典版三个版本; 2. 支持三个版本间切换 (np -t); 3. GitHub模式"
 E[2]="The script must be run as root, you can enter sudo -i and then download and run again. Feedback: [https://github.com/NodePassProject/npsh/issues]"
 C[2]="必须以 root 方式运行脚本，可以输入 sudo -i 后重新下载运行，问题反馈:[https://github.com/NodePassProject/npsh/issues]"
 E[3]="Unsupported architecture: \$(uname -m)"
@@ -30,7 +30,7 @@ C[7]="安装依赖列表:"
 E[8]="Failed to install download tool (curl). Please install wget or curl manually."
 C[8]="无法安装下载工具（curl）。请手动安装 wget 或 curl。"
 E[9]="Failed to copy required files from offline directory."
-C[9]="从离线目录复制必需文件失败。"
+C[9]="从GitHub目录复制必需文件失败。"
 E[10]="NodePass installed successfully!"
 C[10]="NodePass 安装成功！"
 E[11]="NodePass has been uninstalled"
@@ -50,9 +50,9 @@ C[17]="请输入正确的选项"
 E[18]="NodePass is already installed, please uninstall it before reinstalling"
 C[18]="NodePass 已安装，请先卸载后再重新安装"
 E[19]="NodePass files copied successfully from offline directory."
-C[19]="已从离线目录复制 NodePass 文件"
+C[19]="已从GitHub目录复制 NodePass 文件"
 E[20]="Cannot check version in offline mode"
-C[20]="离线模式无法检查版本"
+C[20]="GitHub改版无法检查版本"
 E[21]="Running in container environment, skipping service creation and starting process directly"
 C[21]="在容器环境中运行，跳过服务创建，直接启动进程"
 E[22]="NodePass Script Usage / NodePass 脚本使用方法:\n np - Show menu / 显示菜单\n np -i - Install NodePass / 安装 NodePass\n np -u - Uninstall NodePass / 卸载 NodePass\n np -v - Upgrade NodePass / 升级 NodePass\n np -t - Switch NodePass version between stable and development / 在稳定版和开发版之间切换 NodePass\n np -o - Toggle service status (start/stop) / 切换服务状态 (开启/停止)\n np -k - Change NodePass API key / 更换 NodePass API key\n np -c - Change intranet penetration server / 更换内网穿透\n np -s - Show NodePass API info / 显示 NodePass API 信息\n np -h - Show help information / 显示帮助信息\n np -p - Show port forwarding rules / 显示端口转发规则"
@@ -104,7 +104,7 @@ C[44]="无法获取本地版本"
 E[45]="NodePass Local Core: Stable \$STABLE_LOCAL_VERSION Dev \$DEV_LOCAL_VERSION LTS \$LTS_LOCAL_VERSION"
 C[45]="NodePass 本地核心: 稳定版 \$STABLE_LOCAL_VERSION 开发版 \$DEV_LOCAL_VERSION 经典版 \$LTS_LOCAL_VERSION"
 E[46]="Offline mode: Cannot check remote versions"
-C[46]="离线模式：无法检查远程版本"
+C[46]="GitHub改版：更新请安装覆盖"
 E[47]="Current version is already the latest, no need to upgrade"
 C[47]="当前已是最新版本，不需要升级"
 E[48]="Uninstall NodePass? (y/N)"
@@ -143,9 +143,9 @@ E[64]="Failed to change API KEY"
 C[64]="API KEY 更换失败"
 E[65]="Changing NodePass API KEY..."
 C[65]="正在更换 NodePass API KEY..."
-E[66]="Current running version: Development Version"
+E[66]="Current running version: Development GitHub"
 C[66]="当前运行版本为: 开发版"
-E[67]="Current running version: Stable Version"
+E[67]="Current running version: Stable GitHub"
 C[67]="当前运行版本为: 稳定版"
 E[68]="Please enter the IP of the public machine (leave blank to not penetrate):"
 C[68]="如要把内网的 API 穿透到公网的 NodePass 服务端，请输入公网机器的 IP (留空则不穿透):"
@@ -172,7 +172,7 @@ C[78]="检测到本机的外网是双栈:\\\n 1. \${SERVER_IPV4_DEFAULT}，监�
 E[79]="Please select or enter the domain or IP directly:"
 C[79]="请选择或者直接输入域名或 IP:"
 E[80]="Script statistics disabled in offline mode"
-C[80]="离线模式禁用脚本统计"
+C[80]="GitHub改版禁用脚本统计"
 E[81]="Please enter the port on the server that the local machine will connect to for the tunnel (1024–65535):"
 C[81]="请输入用于内网穿透中，本机连接到服务端的隧道端口（即服务端监听的端口）（1024–65535）:"
 E[82]="Running the service of intranet penetration on the server side:"
@@ -207,7 +207,7 @@ E[96]="Waiting 5 seconds before starting the service..."
 C[96]="正在等待5秒后启动服务..."
 E[97]="Current running version:"
 C[97]="当前运行版本:"
-E[98]="Current running version: Classic Version"
+E[98]="Current running version: Classic GitHub"
 C[98]="当前运行版本为: 经典版"
 E[99]="Classic version can be upgraded from \$LTS_LOCAL_VERSION to new version"
 C[99]="经典版可以从 \$LTS_LOCAL_VERSION 升级到新版本"
@@ -222,15 +222,15 @@ C[103]="取消切换"
 E[104]="Please select the version to switch to (default is 3):"
 C[104]="请选择要切换到的版本 (默认为 3):"
 E[105]="Offline installation - copying files from local directory: $OFFLINE_DIR"
-C[105]="离线安装 - 从本地目录复制文件: $OFFLINE_DIR"
+C[105]="GitHub - 从本地目录复制文件: $OFFLINE_DIR"
 E[106]="Required file missing: "
 C[106]="缺少必需文件: "
 E[107]="Offline package directory not found: $OFFLINE_DIR"
-C[107]="离线包目录未找到: $OFFLINE_DIR"
+C[107]="GitHub包目录未找到: $OFFLINE_DIR"
 E[108]="Checking offline package directory..."
-C[108]="检查离线包目录..."
+C[108]="检查GitHub包目录..."
 E[109]="Offline package directory exists"
-C[109]="离线包目录存在"
+C[109]="GitHub包目录存在"
 E[110]="Available upgrade files: "
 C[110]="可用升级文件: "
 E[111]="No upgrade files found"
@@ -240,7 +240,7 @@ C[112]="已升级 "
 E[113]="Local management script created successfully"
 C[113]="本地管理脚本创建成功"
 E[114]="Downloading offline package from backup source..."
-C[114]="从备用源下载离线包..."
+C[114]="从备用源下载GitHub包..."
 E[115]="Backup source download completed"
 C[115]="备用源下载完成"
 E[116]="Backup source download failed"
@@ -261,11 +261,11 @@ hint() { echo -e "\033[33m\033[01m$*\033[0m"; } # 黄色
 success() { echo -e "\033[32m\033[01m$*\033[0m"; } # 绿色
 reading() { read -rp "$(info "$1")" "$2"; }
 text() { eval echo "\${${L}[$*]}"; }
-# 从备用源下载离线包
+# 从备用源下载GitHub包
 download_backup_offline_package() {
   info " $(text 114) "
   
-  # 下载离线包到 /root/np 目录
+  # 下载GitHub包到 /root/np 目录
   mkdir -p /root/np
   cd /root
   wget -qO npsh.zip https://github.com/lima-droid/np/archive/refs/heads/main.zip
@@ -279,14 +279,14 @@ download_backup_offline_package() {
     return 1
   fi
 }
-# 检查离线包目录，如果没有则从备用源下载
+# 检查GitHub包目录，如果没有则从备用源下载
 check_and_prepare_offline_files() {
-  # 检查离线目录是否存在
+  # 检查GitHub目录是否存在
   if [ ! -d "$OFFLINE_DIR" ]; then
-    hint "离线包目录未找到，尝试从备用源下载..."
+    hint "GitHub包目录未找到，尝试从备用源下载..."
     download_backup_offline_package
    
-    # 再次检查离线目录
+    # 再次检查GitHub目录
     if [ ! -d "$OFFLINE_DIR" ]; then
       error " $(text 107) "
     fi
@@ -930,7 +930,7 @@ compatibility_old_binary() {
       ln -sf "$WORK_DIR/np-dev" "$WORK_DIR/nodepass"
     fi
   fi
-  # 如果缺少LTS版本，检查离线包目录
+  # 如果缺少LTS版本，检查GitHub包目录
   if [ -d $WORK_DIR ] && ! [ -f "$WORK_DIR/np-lts" ] && [ -d "$OFFLINE_DIR" ]; then
     if [ -f "$OFFLINE_DIR/np-lts" ]; then
       cp "$OFFLINE_DIR/np-lts" "$WORK_DIR/np-lts"
@@ -945,7 +945,7 @@ upgrade_nodepass() {
   get_local_version all
   info "\n $(text 45) "
   info " $(text 46) "
-  # 检查离线升级目录
+  # 检查GitHub升级目录
   if [ ! -d "$OFFLINE_DIR" ]; then
     info " $(text 107) "
     exit 0
@@ -972,7 +972,7 @@ upgrade_nodepass() {
         esac
       fi
     elif [ -f "$OFFLINE_DIR/$version" ] && [ ! -f "$WORK_DIR/$version" ]; then
-      # 本地没有但离线包有，也视为可升级
+      # 本地没有但GitHub包有，也视为可升级
       upgrade_files+=("$version")
       upgrade_available=1
       case "$version" in
@@ -1189,7 +1189,7 @@ install() {
       fi
     fi
   }
-  # 检查并准备离线文件
+  # 检查并准备GitHub文件
   check_and_prepare_offline_files
   # 服务器 IP
   if [ -n "$ARGS_SERVER_IP" ]; then
@@ -1520,14 +1520,14 @@ create_local_management_script() {
   cat > $WORK_DIR/np.sh << 'EOF'
 #!/usr/bin/env bash
 # NodePass 本地管理脚本
-# 完全离线版本 - 所有功能内置
+# 完全GitHub版本 - 所有功能内置
 WORK_DIR="/etc/nodepass"
 OFFLINE_DIR="/root/np"
 # 语言文本定义
 E[0]="\n Language:\n 1. English (Default)\n 2. 简体中文"
 C[0]="${E[0]}"
 E[1]="1. Supports three versions: stable, development, and classic; 2. Supports switching between the three versions (np -t); 3. Offline installation mode"
-C[1]="1. 支持稳定版、开发版和经典版三个版本; 2. 支持三个版本间切换 (np -t); 3. 离线安装模式"
+C[1]="1. 支持稳定版、开发版和经典版三个版本; 2. 支持三个版本间切换 (np -t); 3. GitHub模式"
 E[2]="The script must be run as root, you can enter sudo -i and then download and run again. Feedback: [https://github.com/NodePassProject/npsh/issues]"
 C[2]="必须以 root 方式运行脚本，可以输入 sudo -i 后重新下载运行，问题反馈:[https://github.com/NodePassProject/npsh/issues]"
 E[3]="Unsupported architecture: \$(uname -m)"
@@ -1543,7 +1543,7 @@ C[7]="安装依赖列表:"
 E[8]="Failed to install download tool (curl). Please install wget or curl manually."
 C[8]="无法安装下载工具（curl）。请手动安装 wget 或 curl。"
 E[9]="Failed to copy required files from offline directory."
-C[9]="从离线目录复制必需文件失败。"
+C[9]="从GitHub目录复制必需文件失败。"
 E[10]="NodePass installed successfully!"
 C[10]="NodePass 安装成功！"
 E[11]="NodePass has been uninstalled"
@@ -1563,9 +1563,9 @@ C[17]="请输入正确的选项"
 E[18]="NodePass is already installed, please uninstall it before reinstalling"
 C[18]="NodePass 已安装，请先卸载后再重新安装"
 E[19]="NodePass files copied successfully from offline directory."
-C[19]="已从离线目录复制 NodePass 文件"
+C[19]="已从GitHub目录复制 NodePass 文件"
 E[20]="Cannot check version in offline mode"
-C[20]="离线模式无法检查版本"
+C[20]="GitHub改版无法检查版本"
 E[21]="Running in container environment, skipping service creation and starting process directly"
 C[21]="在容器环境中运行，跳过服务创建，直接启动进程"
 E[22]="NodePass Script Usage / NodePass 脚本使用方法:\n np - Show menu / 显示菜单\n np -i - Install NodePass / 安装 NodePass\n np -u - Uninstall NodePass / 卸载 NodePass\n np -v - Upgrade NodePass / 升级 NodePass\n np -t - Switch NodePass version between stable and development / 在稳定版和开发版之间切换 NodePass\n np -o - Toggle service status (start/stop) / 切换服务状态 (开启/停止)\n np -k - Change NodePass API key / 更换 NodePass API key\n np -c - Change intranet penetration server / 更换内网穿透\n np -s - Show NodePass API info / 显示 NodePass API 信息\n np -h - Show help information / 显示帮助信息\n np -p - Show port forwarding rules / 显示端口转发规则"
@@ -1617,7 +1617,7 @@ C[44]="无法获取本地版本"
 E[45]="NodePass Local Core: Stable \$STABLE_LOCAL_VERSION Dev \$DEV_LOCAL_VERSION LTS \$LTS_LOCAL_VERSION"
 C[45]="NodePass 本地核心: 稳定版 \$STABLE_LOCAL_VERSION 开发版 \$DEV_LOCAL_VERSION 经典版 \$LTS_LOCAL_VERSION"
 E[46]="Offline mode: Cannot check remote versions"
-C[46]="离线模式：无法检查远程版本"
+C[46]="GitHub改版：更新请安装覆盖"
 E[47]="Current version is already the latest, no need to upgrade"
 C[47]="当前已是最新版本，不需要升级"
 E[48]="Uninstall NodePass? (y/N)"
@@ -1656,9 +1656,9 @@ E[64]="Failed to change API KEY"
 C[64]="API KEY 更换失败"
 E[65]="Changing NodePass API KEY..."
 C[65]="正在更换 NodePass API KEY..."
-E[66]="Current running version: Development Version"
+E[66]="Current running version: Development GitHub"
 C[66]="当前运行版本为: 开发版"
-E[67]="Current running version: Stable Version"
+E[67]="Current running version: Stable GitHub"
 C[67]="当前运行版本为: 稳定版"
 E[68]="Please enter the IP of the public machine (leave blank to not penetrate):"
 C[68]="如要把内网的 API 穿透到公网的 NodePass 服务端，请输入公网机器的 IP (留空则不穿透):"
@@ -1685,7 +1685,7 @@ C[78]="检测到本机的外网是双栈:\\\n 1. \${SERVER_IPV4_DEFAULT}，监�
 E[79]="Please select or enter the domain or IP directly:"
 C[79]="请选择或者直接输入域名或 IP:"
 E[80]="Script statistics disabled in offline mode"
-C[80]="离线模式禁用脚本统计"
+C[80]="GitHub改版禁用脚本统计"
 E[81]="Please enter the port on the server that the local machine will connect to for the tunnel (1024–65535):"
 C[81]="请输入用于内网穿透中，本机连接到服务端的隧道端口（即服务端监听的端口）（1024–65535）:"
 E[82]="Running the service of intranet penetration on the server side:"
@@ -1720,7 +1720,7 @@ E[96]="Waiting 5 seconds before starting the service..."
 C[96]="正在等待5秒后启动服务..."
 E[97]="Current running version:"
 C[97]="当前运行版本:"
-E[98]="Current running version: Classic Version"
+E[98]="Current running version: Classic GitHub"
 C[98]="当前运行版本为: 经典版"
 E[99]="Classic version can be upgraded from \$LTS_LOCAL_VERSION to new version"
 C[99]="经典版可以从 \$LTS_LOCAL_VERSION 升级到新版本"
@@ -1735,15 +1735,15 @@ C[103]="取消切换"
 E[104]="Please select the version to switch to (default is 3):"
 C[104]="请选择要切换到的版本 (默认为 3):"
 E[105]="Offline installation - copying files from local directory: $OFFLINE_DIR"
-C[105]="离线安装 - 从本地目录复制文件: $OFFLINE_DIR"
+C[105]="GitHub - 从本地目录复制文件: $OFFLINE_DIR"
 E[106]="Required file missing: "
 C[106]="缺少必需文件: "
 E[107]="Offline package directory not found: $OFFLINE_DIR"
-C[107]="离线包目录未找到: $OFFLINE_DIR"
+C[107]="GitHub包目录未找到: $OFFLINE_DIR"
 E[108]="Checking offline package directory..."
-C[108]="检查离线包目录..."
+C[108]="检查GitHub包目录..."
 E[109]="Offline package directory exists"
-C[109]="离线包目录存在"
+C[109]="GitHub包目录存在"
 E[110]="Available upgrade files: "
 C[110]="可用升级文件: "
 E[111]="No upgrade files found"
@@ -1753,7 +1753,7 @@ C[112]="已升级 "
 E[113]="Local management script created successfully"
 C[113]="本地管理脚本创建成功"
 E[114]="Downloading offline package from backup source..."
-C[114]="从备用源下载离线包..."
+C[114]="从备用源下载GitHub包..."
 E[115]="Backup source download completed"
 C[115]="备用源下载完成"
 E[116]="Backup source download failed"
@@ -1979,7 +1979,7 @@ switch_version() {
 upgrade_core() {
   info " $(text 94) "
  
-  # 检查离线升级目录
+  # 检查GitHub升级目录
   if [ ! -d "$OFFLINE_DIR" ]; then
     info " $(text 107) "
     exit 0
@@ -2793,7 +2793,7 @@ menu() {
   grep -q '.' <<< "$KEY" && info " $(text 40) $KEY"
   grep -q '.' <<< "$SERVER_CMD" && info " $(text 82) $SERVER_CMD"
   grep -q '.' <<< "$URI" && [ -x "${WORK_DIR}/qrencode" ] && info " $(text 90) $URI"
-  info " Version: $SCRIPT_VERSION $(text 1) "
+  info " GitHub: $SCRIPT_VERSION $(text 1) "
   echo "------------------------"
   # 显示菜单选项，但将索引为0的选项放在最后
   for ((b=1;b<=${#OPTION[*]};b++)); do [ "$b" = "${#OPTION[*]}" ] && hint " ${OPTION[0]} " || hint " ${OPTION[b]} "; done
