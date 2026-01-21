@@ -1,15 +1,17 @@
 NodePass部署 运行脚本：
 bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
-np.sh：一键部署NodePass主程序，提供高性能TCP/UDP隧道，支持多系统，配置灵活。 np.sh：一键部署NodePassDash控制面板，简化隧道管理和监控，支持容器化和HTTPS。
-
 稳定版：v1.15.0
 开发版本：v1.15.1-b1
 经典版:v1.10.3
-NodePass是一款通用的 TCP/UDP 隧道解决方案，采用控制数据分离架构，支持零延迟连接池和多模式通信，可在网络限制下实现高性能、安全的访问。
+NodePass是一款通用的
+TCP/UDP 隧道解决方案
+采用控制数据分离架构
+支持零延迟连接池和多模式通信
+可在网络限制下实现高性能、安全的访问。
 
 系统要求
-操作系统：兼容 Debian、Ubuntu、CentOS、Fedora、Alpine、Arch、OpenWRT 等。
-架构：支持 x86_64 (amd64)、aarch64 (arm64)
+操作系统：兼容 Debian、Ubuntu、OpenWRT 等。
+架构：支持 x86_64 (amd64)
 权限：需要 root 权限才能运行
 1.np.sh脚本（主程序安装）
 请按照提示提供以下信息：
