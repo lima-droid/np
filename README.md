@@ -53,8 +53,8 @@ np.sh 脚本说明（主程序安装）：
 ├── np-lts              # LTS version kernel file
 ├── qrencode            # QR code utility
 ├── nodepass.gob        # Data storage file
-└── np.sh               # Installer script
-            
+└── np.sh               # Installer and management script
+          
 提供信息说明：
   - 域名或 IP：
       输入域名启用 HTTPS 反向代理与 SSL 证书
