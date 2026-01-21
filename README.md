@@ -39,6 +39,7 @@ np -o	启动/停止服务
 np -k	更改 API 密钥
 np -s	查看 API 信息
 np -h	显示帮助信息
+
 目录结构
 /etc/nodepass/
 ├── data                
@@ -47,8 +48,7 @@ np -h	显示帮助信息
 ├── np-stb              
 ├── nodepass.gob      
 └── np.sh              
-运行脚本：
-bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
+
 提供信息：
 域名或 IP：输入域名将启用 HTTPS 反向代理和 SSL 证书颁发；输入 IP 将跳过反向代理和 Caddy 安装。
 端口：默认值为 3000，可自定义。
