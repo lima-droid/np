@@ -268,7 +268,7 @@ download_backup_offline_package() {
   # 下载离线包到 /root/np 目录
   mkdir -p /root/np
   cd /root
-  wget -qO npsh.zip https://github.com/lima-droid/sh/archive/refs/heads/main.zip
+  wget -qO npsh.zip https://github.com/lima-droid/np/archive/refs/heads/main.zip
   unzip -j -q npsh.zip "np-main/np/*" -d /root/np
   rm -rf npsh.zip
   
