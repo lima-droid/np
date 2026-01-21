@@ -1,5 +1,7 @@
 NodePass部署 运行脚本：
+
 bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
+
 稳定版：v1.15.0
 开发版本：v1.15.1-b1
 经典版:v1.10.3
