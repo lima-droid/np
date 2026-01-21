@@ -46,15 +46,15 @@ np.sh 脚本说明（主程序安装）：
 
 目录结构：
 /etc/nodepass/
-├── data                
-├── nodepass            
-├── np-dev              
-├── np-stb
-
-├── np-lts
-├── qrencode
-├── nodepass.gob        
-└── np.sh               
+├── data                # Configuration data
+├── nodepass            # Main program symlink pointing to the currently used kernel file
+├── np-dev              # Development version kernel file
+├── np-stb              # Stable version kernel file
+├── np-lts              # LTS version kernel file
+├── qrencode            # QR code utility
+├── nodepass.gob        # Data storage file
+└── np.sh               # Installer script
+            
 提供信息说明：
   - 域名或 IP：
       输入域名启用 HTTPS 反向代理与 SSL 证书
