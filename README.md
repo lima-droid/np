@@ -1,6 +1,6 @@
 一键部署：
 
-          bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
+    bash <(wget -qO- https://raw.githubusercontent.com/lima-droid/np/main/np.sh)
 
 版本信息：
 稳定版：v1.15.0
