@@ -42,15 +42,15 @@ np -h	显示帮助信息
 
 目录结构
 /etc/nodepass/
-├── data                
-├── nodepass           
-├── np-dev            
+├── data
+├── nodepass
+├── np-dev
 ├── np-stb
 ├── np-lts
 ├── qrencode
-├── nodepass.gob      
-└── np.sh              
-
+├── nodepass.gob
+└── np.sh
+          
 提供信息：
 域名或 IP：输入域名将启用 HTTPS 反向代理和 SSL 证书颁发；输入 IP 将跳过反向代理和 Caddy 安装。
 端口：默认值为 3000，可自定义。
