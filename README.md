@@ -45,7 +45,9 @@ np -h	显示帮助信息
 ├── data                
 ├── nodepass           
 ├── np-dev            
-├── np-stb              
+├── np-stb
+├── np-lts
+├── qrencode
 ├── nodepass.gob      
 └── np.sh              
 
