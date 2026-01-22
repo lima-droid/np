@@ -46,8 +46,14 @@ np -h      显示帮助信息
 - 端口：默认 3000，可自定义
 - 自动检查端口冲突
 
-卸载命令：
-$ np -u
+快捷命令：
+np        # 管理菜单
+np -o     # 启停服务
+np -s     # 查看 API / KEY / URI
+np -t     # 切换 稳定 / 开发 / 经典
+np -v     # 升级 NodePass
+np -p     # 查看端口转发规则
+np -u     # 卸载 NodePass
 
 项目简介：
 NodePass 是一款通用的 TCP/UDP 隧道解决方案
