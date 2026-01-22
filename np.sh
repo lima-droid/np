@@ -11,7 +11,7 @@ WORK_DIR='/etc/nodepass'
 GOB_DIR="$WORK_DIR/gob"
 trap "rm -rf $TEMP_DIR >/dev/null 2>&1 ; echo -e '\n' ;exit" INT QUIT TERM EXIT
 mkdir -p $TEMP_DIR
-E[0]="\n Language:\n 1. 简体中文 (Default)\n 2. English"
+E[0]="\n Language:\n 1. 简体中文 \n 2. English"
 C[0]="${E[0]}"
 E[1]="1. Supports three versions: stable, development, and classic; 2. Supports switching between the three versions (np -t); 3. Offline installation mode"
 C[1]="1. 支持稳定版、开发版和经典版三个版本; 2. 支持三个版本间切换 (np -t); 3. GitHub模式"
