@@ -1230,9 +1230,9 @@ install() {
     echo ""
     info " $(text 84) "
     echo ""
-    hint " 1. 稳定版 - 适合生产环境 (默认)"
-    hint " 2. 开发版 - 包含最新功能，可能不稳定"
-    hint " 3. 经典版 - 长期支持版本"
+    hint " 1. 稳定版 - 适合生产环境"
+    hint " 2. 开发版 - 包含最新功能"
+    hint " 3. 经典版 - 简单粗暴版本"
     reading "\n $(text 4) " VERSION_TYPE_CHOICE
     VERSION_TYPE_CHOICE=${VERSION_TYPE_CHOICE:-1}
   fi
