@@ -64,7 +64,7 @@ print_banner() {
     echo ' | |\/| | |_| | |_| | |  _| |\/| | |_| |'
     echo ' |_|  |_|\___/ \___/|_| (_)_|  |_|\___/'
     echo -e "${NC}"
-    echo -e "${DIM}          Mihomo 一键管理脚本${NC}"
+    echo -e "${DIM}          Docker Mihomo 一键管理脚本${NC}"
     echo ""
 }
 
